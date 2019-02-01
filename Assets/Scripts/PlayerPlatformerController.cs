@@ -65,4 +65,13 @@ public class PlayerPlatformerController : PhysicsObject
 
         targetVelocity = move * maxSpeed;
     }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.layer == 8)
+        {
+            animator.SetTrigger("eat");
+            Destroy(collision.gameObject);
+        }
+    }
 }
