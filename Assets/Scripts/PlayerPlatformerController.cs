@@ -68,8 +68,10 @@ public class PlayerPlatformerController : PhysicsObject
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.layer == 8)
+        if (collision.gameObject.layer == 8)
         {
+            //Physics2D.IgnoreCollision(collision.collider, GetComponent<Collider2D>());
+            GetComponent<Rigidbody2D>().velocity = Vector2.zero;
             animator.SetTrigger("eat");
             Destroy(collision.gameObject);
         }

@@ -72,10 +72,14 @@ public class Controller : MonoBehaviour {
 
     float Clamp(float input)
     {
-        if(input > 1 || input < -1)
-        {
-            return 0;
-        }
-        return input;
+        //if(input > 1 || input < -1)
+        //{
+        //    return 0;
+        //}
+        if (input > 0)
+            return 1;
+        else
+            return -1;
+        //return input;
     }
 }
