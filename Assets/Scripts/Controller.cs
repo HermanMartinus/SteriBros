@@ -18,25 +18,25 @@ public class Controller : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-        if (Input.GetMouseButton(0) && Input.mousePosition.x < Screen.width /2f )
-        {
-            Player1X = Clamp((Input.mousePosition.x / (Screen.width / 2) - 0.5f) * 2);
-        }
-        else
-        {
-            Player1X = 0;
-        }
+        //if (Input.GetMouseButton(0) && Input.mousePosition.x < Screen.width /2f )
+        //{
+        //    Player1X = Clamp((Input.mousePosition.x / (Screen.width / 2) - 0.5f) * 2);
+        //}
+        //else
+        //{
+        //    Player1X = 0;
+        //}
 
-        if (Input.GetMouseButton(0) && Input.mousePosition.x > Screen.width / 2f)
-        {
-            Player2X = Clamp((Input.mousePosition.x / (Screen.width / 2) - 1.5f) * 2);
-        }
-        else
-        {
-            Player2X = 0;
-        }
+        //if (Input.GetMouseButton(0) && Input.mousePosition.x > Screen.width / 2f)
+        //{
+        //    Player2X = Clamp((Input.mousePosition.x / (Screen.width / 2) - 1.5f) * 2);
+        //}
+        //else
+        //{
+        //    Player2X = 0;
+        //}
 
-        MobileController();
+        //MobileController();
     }
 
     void MobileController()
@@ -81,5 +81,25 @@ public class Controller : MonoBehaviour {
         else
             return -1;
         //return input;
+    }
+
+    public void MovePlayer1(bool left)
+    {
+        Player1X = left ? -1 : 1;
+    }
+
+    public void StopPlayer1()
+    {
+        Player1X = 0;
+    }
+
+    public void MovePlayer2(bool left)
+    {
+        Player2X = left ? -1 : 1;
+    }
+
+    public void StopPlayer2()
+    {
+        Player2X = 0;
     }
 }
